@@ -1,7 +1,6 @@
 # DaizyAGI
 My first Python ML project Still in very early stages
-
-
+![logo](https://github.com/rickscode/DaizyAGI/assets/71875733/d8e6dcd8-9a53-41ab-af60-62cad5b5a474)
 
 ## Objective
 
@@ -24,4 +23,8 @@ Testing front end does the same
 ## Example Test Task
 
 List the worlds best restaurants
+
+
+
+https://github.com/rickscode/DaizyAGI/assets/71875733/1537589b-1ed9-4cd0-80e2-5ea2c6ed7daa
 
