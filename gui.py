@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QLineEdit, QVBoxLayout, QWidget, QMessageBox
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont,QPixmap
 from PyQt5.QtCore import Qt
 import main
 from dotenv import load_dotenv
@@ -10,14 +10,24 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Daizy AGI")
-        self.setFixedSize(500, 300)
+        self.setFixedSize(700, 500)
 
         self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
-
-        self.title_label = QLabel("DaizyAGI", self.central_widget)
+        
+        # creating label
+        self.title_label = QLabel("Daizy", self.central_widget)
         self.title_label.setAlignment(Qt.AlignCenter)
         self.title_label.setFont(QFont("Arial", 20))
+        self.title_label = QLabel(self)
+         
+        # loading image
+        self.pixmap = QPixmap('logodaizyagi.png')
+ 
+        # adding image to label
+        self.title_label.setPixmap(self.pixmap)
+        self.title_label.resize(self.pixmap.width(),
+                          self.pixmap.height())
 
         self.input_label = QLabel("Enter An Objective:", self.central_widget)
         self.input_label.setFont(QFont("Arial", 14))
@@ -25,7 +35,7 @@ class MainWindow(QMainWindow):
         self.input_text = QLineEdit(self.central_widget)
         self.input_text.setFont(QFont("Arial", 14))
 
-        self.submit_button = QPushButton("Get Working On It", self.central_widget)
+        self.submit_button = QPushButton("Please Begin Task", self.central_widget)
         self.submit_button.setFont(QFont("Arial", 14))
         self.submit_button.clicked.connect(self.submit_task)
 
